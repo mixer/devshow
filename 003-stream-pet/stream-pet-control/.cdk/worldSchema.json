@@ -1,0 +1,20 @@
+[
+  {
+    "name": "$working",
+    "world": {
+      "scenes": [
+        {
+          "controls": [
+            {
+              "cost": 50,
+              "id": "button1",
+              "kind": "button"
+            }
+          ],
+          "sceneID": "default"
+        }
+      ]
+    },
+    "savedAt": 1539217972484
+  }
+]

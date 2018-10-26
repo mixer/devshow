@@ -1,0 +1,21 @@
+{
+  "name": "minimal_game_client",
+  "version": "1.0.0",
+  "description": "A minimal game client sample for Mixer",
+  "scripts": {
+    "start": "ts-node src/game_client.ts"
+  },
+  "author": "Mike Blouin <mb@xbox.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@mixer/interactive-node": "^2.9.0",
+    "mixer-shortcode-oauth": "^1.0.2",
+    "ws": "^3.3.3"
+  },
+  "devDependencies": {
+    "@types/node": "^10.11.3",
+    "@types/ws": "^6.0.1",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.1.1"
+  }
+}

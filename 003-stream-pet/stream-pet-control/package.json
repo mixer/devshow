@@ -1,0 +1,24 @@
+{
+  "name": "stream-pet-control",
+  "version": "0.1.0",
+  "scripts": {
+    "fmt:style": "prettier --single-quote --trailing-comma all --print-width 100 --write \"src/**/*.js\""
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@mixer/cdk-std": "^0.2.20",
+    "@mixer/cdk-webpack-plugin": "^0.1.5",
+    "clean-webpack-plugin": "^0.1.17",
+    "copy-webpack-plugin": "^4.4.0",
+    "prettier": "^1.11.1",
+    "webpack": "^4.5.0",
+    "webpack-cli": "^2.0.14",
+    "webpack-dev-server": "^3.1.1"
+  },
+  "dependencies": {
+    "@mixer/cdk-std": "^0.3.0",
+    "eventemitter3": "^3.1.0"
+  },
+  "author": "Mobius5150",
+  "keywords": []
+}

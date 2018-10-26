@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stream Pet</title>
+  <script src="https://mixercc.azureedge.net/lib/std-v0.2.js"></script>
+  <style>
+    body, html {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      position: relative;
+    }
+
+    #stream-pet {
+      background-color: black;
+      color: white;
+      position: absolute;
+      right: 10px;
+      top: 0;
+      bottom: 0;
+      width: 230px;
+    }
+
+    #leaderboard .entry {
+      padding: 10px 20px;
+    }
+
+    #leaderboard-header {
+      padding: 10px 20px;
+    }
+
+    #leaderboard-container {
+      height: calc(100vh - 250px);
+    }
+
+    #leaderboard-container {
+      overflow: hidden;
+    }
+
+    #leaderboard-container:hover {
+      overflow-y: auto;
+    }
+
+    #leaderboard .entry:hover {
+      background-color: #666;
+    }
+
+    #pet {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 270px;
+      background-position: center bottom;
+      background-repeat: no-repeat;
+      background-image: url('img/emotes/bear-happy.png');
+    }
+
+    #pet.sad {
+      background-image: url('img/emotes/bear-sad.png');
+    }
+
+    #pet.bored {
+      background-image: url('img/emotes/bear-bored.png');
+    }
+
+    #pet.hungry {
+      background-image: url('img/emotes/bear-hungry.png');
+    }
+
+    #actions {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      text-align: center;
+    }
+
+    .action {
+      width: 30%;
+      margin: 0;
+
+    }
+
+    #happiness {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      height: 20px;
+      background-color: blue;
+    }
+
+    #happiness-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      background-color: aqua;
+    }
+  </style>
+</head>
+<body>
+  <div id="stream-pet">
+    <div id="leaderboard-container">
+      <div id="leaderboard-header">Leaderboard</div>
+      <div id="leaderboard"></div>
+    </div>
+    <div id="pet">
+      <div id="happiness">
+        <div id="happiness-bar" style="width: 50%"></div>
+      </div>
+    </div>
+    <div id="actions">
+      <button id="action-feed" class="action" title="Feed your bear!">Feed</button>
+      <button id="action-play" class="action" title="Play with your bear!">Play</button>
+      <button id="action-mixer" class="action" title="Watch Mixer with your bear!">Mixer</button>
+    </div>
+  </div>
+
+  <script src="./scripts.js"></script>
+</body>
+</html>

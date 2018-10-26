@@ -1,0 +1,16 @@
+{
+    "buttonDisabledDurationMS": 1000,
+    "actions": [
+        "feed",
+        "play",
+        "mixer"
+    ],
+    "possibleStates": [
+        "happy",
+        "sad",
+        "bored",
+        "hungry"
+    ],
+    "defaultState": "happy",
+    "paneWidth": 250
+}
