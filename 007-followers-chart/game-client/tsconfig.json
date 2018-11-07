@@ -1,0 +1,49 @@
+{
+    "compilerOptions": {
+        "declaration": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "moduleResolution": "node",
+        "noImplicitAny": false,
+        "noImplicitReturns": false,
+        "noFallthroughCasesInSwitch": true,
+        "noUnusedLocals": false,
+        "noUnusedParameters": false,
+        "strictNullChecks": false,
+        "suppressImplicitAnyIndexErrors": true,
+        "module": "commonjs",
+        "sourceMap": true,
+        "target": "es5",
+        "outDir": "dist",
+        "lib": [
+            "es5",
+            "dom",
+            "es2015.collection",
+            "es2015.promise",
+            "es2015.iterable",
+            "es2015.core"
+        ],
+        "types": [
+            "node"
+        ],
+        "typeRoots": [
+            "node_modules/@types"
+        ],
+        "baseUrl": ".",
+        "paths": {
+            "*": [
+                "./types/*"
+            ]
+        },
+        "skipLibCheck": true
+    },
+    "exclude": [
+        "node_modules",
+        "chroma-js/node_modules",
+        "test",
+        "dist",
+        "lib",
+        "examples",
+        "**/*.spec.ts"
+    ]
+}

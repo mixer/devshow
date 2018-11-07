@@ -1,0 +1,26 @@
+{
+  "coverUrl": null,
+  "createdAt": "2018-10-31T16:33:39.000Z",
+  "deletedAt": null,
+  "description": null,
+  "hasPublishedVersions": false,
+  "id": 290148,
+  "installation": null,
+  "isShared": false,
+  "name": "Dev Show Follower Chart Sample",
+  "ownerId": 338492,
+  "typeId": 130909,
+  "updatedAt": "2018-10-31T16:33:39.000Z",
+  "versions": [
+    {
+      "changelog": "Initial release",
+      "createdAt": "2018-10-31T16:33:39.000Z",
+      "id": 296061,
+      "installation": null,
+      "state": "draft",
+      "updatedAt": "2018-10-31T16:33:39.000Z",
+      "version": "0.1.0",
+      "versionOrder": 256
+    }
+  ]
+}
