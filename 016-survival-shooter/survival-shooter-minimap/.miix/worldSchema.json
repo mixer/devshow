@@ -1,0 +1,51 @@
+[
+  {
+    "name": "$working",
+    "world": {
+      "scenes": [
+        {
+          "controls": [
+            {
+              "controlID": "bomb",
+              "kind": "button",
+              "position": [],
+              "text": "bomb"
+            },
+            {
+              "controlID": "control",
+              "kind": "button",
+              "position": [],
+              "text": "bomb"
+            },
+            {
+              "controlID": "control-fwd",
+              "kind": "button",
+              "position": [],
+              "text": "bomb"
+            },
+            {
+              "controlID": "control-rev",
+              "kind": "button",
+              "position": [],
+              "text": "bomb"
+            },
+            {
+              "controlID": "control-left",
+              "kind": "button",
+              "position": [],
+              "text": "bomb"
+            },
+            {
+              "controlID": "control-right",
+              "kind": "button",
+              "position": [],
+              "text": "bomb"
+            }
+          ],
+          "sceneID": "default"
+        }
+      ]
+    },
+    "savedAt": 1548876429582
+  }
+]

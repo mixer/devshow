@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>My Awesome Interactive Integration</title>
+  <script src="https://mixercc.azureedge.net/lib/std-v0.2.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+</head>
+<body>
+  <div id="minimap-container">
+    <canvas id="minimap" height="200" width="200"></canvas>
+  </div>
+  <div id="bomb-container">
+    <button class="bomb-btn" data-action="sonic">Sonic Bomb</button>
+    <button class="bomb-btn" data-action="blast">Blast Bomb</button>
+  </div>
+  <div id="controller-container" class="">
+    <div class="take-control-btn">
+      <button id="btn-take-control">Take Control</button>
+    </div>
+    <div class="controller-buttons">
+      <div class="center">
+        <button class="control-btn center" data-action="fwd" data-key="w">Up</button>
+      </div>
+      <button class="control-btn" data-action="left" data-key="a">Left</button>
+      <button class="control-btn" data-action="rev" data-key="s">Down</button>
+      <button class="control-btn" data-action="right" data-key="d">Right</button>
+    </div>
+  </div>
+  <script src="./scripts.js"></script>
+</body>
+</html>

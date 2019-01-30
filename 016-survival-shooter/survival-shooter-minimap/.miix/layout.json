@@ -1,0 +1,33 @@
+[
+  {
+    "activeItemIndex": 1,
+    "content": [
+      {
+        "componentName": "ControlsConsole",
+        "isClosable": true,
+        "reorderEnabled": true,
+        "title": "Control Output Console",
+        "type": "component"
+      },
+      {
+        "componentName": "Controls",
+        "isClosable": true,
+        "reorderEnabled": true,
+        "title": "Controls",
+        "type": "component"
+      },
+      {
+        "componentName": "ControlSchema",
+        "isClosable": true,
+        "reorderEnabled": true,
+        "title": "Control Schema",
+        "type": "component"
+      }
+    ],
+    "isClosable": true,
+    "reorderEnabled": true,
+    "title": "",
+    "type": "stack",
+    "width": 100
+  }
+]

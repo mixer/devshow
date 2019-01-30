@@ -1,0 +1,63 @@
+$control-width: 200px;
+$control-height: 200px;
+
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+button {
+    width: 80px;
+    height: 50px;
+}
+
+#minimap-container {
+    width: $control-width;
+    height: $control-height;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(black, 0.7);
+}
+
+#minimap {
+    width: 200px;
+    height: 200px;
+}
+
+#bomb-container, #controller-container {
+    position: absolute;
+    width: $control-width;
+    top: calc(#{$control-height} + 30px);
+    right: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#controller-container {
+    top: calc(#{$control-height} + 110px);
+
+    .center {
+        text-align: center;
+    }
+
+    .control-btn {
+        width: 50px;
+    }
+
+    .controller-buttons {
+        display: none;
+    }
+}
+
+#controller-container.active {
+    .take-control-btn {
+        display: none;
+    }
+    
+    .controller-buttons {
+        display: block;
+    }
+}
