@@ -2,12 +2,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace CompleteProject
 {
     [Serializable]
     class InteractiveBombMessage {
+        public string controlID;
         public string bombType;
         public InteractiveBombLocation location;
     }
@@ -29,12 +31,20 @@ namespace CompleteProject
     [Serializable]
     class InteractiveInputParams
     {
+        public string controlID;
+
         public string participantID;
         public InteractiveBombMessage input;
     }
 
     public class InteractiveManager : MonoBehaviour
     {
+        public const string BUTTON_MOVE_FORWARD = "control-fwd";
+        public const string BUTTON_MOVE_BACKWARD = "control-rev";
+        public const string BUTTON_MOVE_RIGHT = "control-left";
+        public const string BUTTON_MOVE_LEFT = "control-right";
+        public const string BUTTON_BOMB = "bomb";
+        public const string BUTTON_CONTROL = "control";
         public const float UpdateMovementEpsilon = 0.01f;
 
         public float BlastBombRadius = 1.0f;
@@ -52,6 +62,8 @@ namespace CompleteProject
 
         private float lastSendTime = -1;
         private float sendInterval = 0.1f;
+
+        private Dictionary<string, InteractiveControlSession> Controller = new Dictionary<string, InteractiveControlSession>();
 
         // Use this for initialization
         void Start()
@@ -73,6 +85,49 @@ namespace CompleteProject
                 return;
             }
 
+            switch (message.@params.input.controlID)
+            {
+                case BUTTON_BOMB:
+                    HandleBomb(message);
+                    break;
+                case BUTTON_CONTROL:
+                    StartCoroutine(HandleTakeControl(message));
+                    break;
+            }
+            
+        }
+
+        private IEnumerator HandleTakeControl(InteractivePacket<InteractiveBombMessage> message)
+        {
+            var participant = message.@params.participantID;
+            if (Controller.ContainsKey(participant))
+            {
+                yield break;
+            }
+
+            var enemies = GameObject.FindObjectsOfType<EnemyMovement>()
+                .Where(e => !e.GetIsBeingControlled())
+                .ToArray();
+            var enemyIndex = UnityEngine.Random.Range(0, enemies.Length);
+            var session = new InteractiveControlSession
+            {
+                ControlDurationSeconds = 30f,
+                ControlledObject = enemies[enemyIndex].gameObject,
+                ParticipantSessionId = participant,
+            };
+
+            // Take Control
+            Debug.Log("Take Control");
+            Controller.Add(participant, session);
+            yield return session.TakeControl();
+
+            // Control ended
+            Debug.Log("Yield control");
+            Controller.Remove(participant);
+        }
+
+        private void HandleBomb(InteractivePacket<InteractiveBombMessage> message)
+        {
             var location = message.@params.input.location;
             RaycastHit hit;
             var ray = Camera.main.ViewportPointToRay(new Vector3(

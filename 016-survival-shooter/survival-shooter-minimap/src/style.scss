@@ -8,6 +8,11 @@ $control-height: 200px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+button {
+    width: 80px;
+    height: 50px;
+}
+
 #minimap-container {
     width: $control-width;
     height: $control-height;
@@ -22,7 +27,7 @@ $control-height: 200px;
     height: 200px;
 }
 
-#bomb-container {
+#bomb-container, #controller-container {
     position: absolute;
     width: $control-width;
     top: calc(#{$control-height} + 30px);
@@ -31,7 +36,28 @@ $control-height: 200px;
     justify-content: space-around;
 }
 
-.bomb-btn {
-    width: 80px;
-    height: 50px;
+#controller-container {
+    top: calc(#{$control-height} + 110px);
+
+    .center {
+        text-align: center;
+    }
+
+    .control-btn {
+        width: 50px;
+    }
+
+    .controller-buttons {
+        display: none;
+    }
+}
+
+#controller-container.active {
+    .take-control-btn {
+        display: none;
+    }
+    
+    .controller-buttons {
+        display: block;
+    }
 }

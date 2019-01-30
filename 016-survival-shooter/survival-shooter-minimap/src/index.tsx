@@ -19,3 +19,7 @@ Mixer.display.moveVideo({
 Mixer.socket.on('event', (data) => {
     actions.updateMap(data);
 });
+
+Mixer.socket.on('onParticipantUpdate', (update) => {
+    actions.updateParticipant(update.participants[0]);
+});
